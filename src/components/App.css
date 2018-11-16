@@ -3,4 +3,11 @@
 }
 .box *{
     margin: auto 5px;
+    border-spacing: 0;
+}
+.box table{
+    margin-top: 10px;
+}
+.box td{
+    padding: 6px 10px;
 }

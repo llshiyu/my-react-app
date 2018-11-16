@@ -1,5 +1,6 @@
 .box{
     margin: 0 15px;
+    padding: 30px;
 }
 .box *{
     margin: auto 5px;

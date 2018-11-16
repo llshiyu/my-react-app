@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Table from './Table';
+import Color from './Color';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -19,7 +20,10 @@ class App extends React.Component {
                 desc: ''
             },
             tableList: [],
-            msg: ''
+            msg: '',
+            color: '',
+            childColor: '#fff',
+            parentColor: '#fff'
         };
         // this.addCount = this.addCount.bind(this);
         this.reduceCount = this.reduceCount.bind(this);
@@ -82,10 +86,26 @@ class App extends React.Component {
     onKeyUp = (e) => {
         e.keyCode === 13 && this.searchList()
     };
+    colorChange = (e) => {
+        this.setState({
+            color: e.target.value
+        })
+    };
+    changeChildBackground = () => {
+        this.setState({
+            childColor: this.state.color
+        })
+    };
+
+    parentChange(color) {
+        this.setState({
+            parentColor: color
+        })
+    }
 
     render() {
         return (
-            <div className='box'>
+            <div className='box' style={{backgroundColor: this.state.parentColor}}>
                 <button onClick={this.addCount}>+</button>
                 <button onClick={this.reduceCount}>-</button>
                 <span>{this.props.name}</span>
@@ -102,6 +122,11 @@ class App extends React.Component {
                 {
                     this.state.msg ? <span style={{color: '#ff0000'}}>{this.state.msg}</span> : null
                 }
+                <br/>
+                <input style={{width: '200px'}} type="text" placeholder='请输入颜色值，默认#ffffff' onChange={this.colorChange}
+                       value={this.state.color}/>
+                <button onClick={this.changeChildBackground}>改变子组件的背景色</button>
+                <Color color={this.state.childColor} parentStyle={this.parentChange.bind(this)}></Color>
             </div>
         )
     }

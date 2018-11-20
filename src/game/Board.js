@@ -28,7 +28,7 @@ class Board extends React.Component {
             }
         }
         return null;
-    }
+    };
 
     parentSquareClick(i) {
         const squares = this.state.squares.slice();

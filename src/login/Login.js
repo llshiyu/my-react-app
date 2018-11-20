@@ -1,7 +1,6 @@
 import React from 'react';
 import './login.css';
 import $ from 'jquery';
-import App from './../components/App'
 
 
 class Login extends React.Component {
@@ -66,7 +65,8 @@ class Login extends React.Component {
             data:params,
             success: (res)=> {
                 if(res.meta.code===0){
-                    this.setSuccMsg('登录成功')
+                    this.setSuccMsg('登录成功');
+                    this.props.history.push('/home');
                 }else if(res.meta.code===200000){
                     this.setMsg(res.meta.message,1)
                 }else if(res.meta.code===200001){
@@ -78,41 +78,12 @@ class Login extends React.Component {
         })
     };
     goRegister(){
-        if (this.state.username) {
-            if (this.state.password) {
-                this.setMsg('');
-                this.registerAjax()
-            } else {
-                this.setMsg('请输入密码', 2);
-            }
-        } else {
-            this.setMsg('请输入用户名', 1);
-        }
+        this.props.history.push('/register');
     }
-    registerAjax=()=>{
-        let params = {
-            username: this.state.username,
-            password: this.state.password
-        };
-        $.ajax({
-            url:'http://localhost:8082/register',
-            type: 'post',
-            dataType: 'json',
-            data:params,
-            success:function (res) {
-                if(res.meta.code===0){
-                    this.setSuccMsg('注册成功')
-                }else if(res.meta.code===200002){
-                    this.setMsg(res.meta.message,1)
-                }else{
-                    this.setSuccMsg(res.meta.message)
-                }
-            }.bind(this)
-        })
-    };
     render() {
         return (
             <div className='login-box'>
+                <h1>登录</h1>
                 <form action='' className='login-form' onSubmit={this.formSubmit.bind(this)}>
                     <div className="input-box">
                         <label htmlFor="username">用户名</label>

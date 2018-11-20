@@ -1,9 +1,6 @@
 import React from 'react';
 
 class Color extends React.Component {
-    constructor(prop) {
-        super(prop)
-    }
 
     changeParentBackground = () => {
         this.props.parentStyle(this.props.color)

@@ -1,0 +1,51 @@
+.register-box {
+    text-align: center;
+}
+
+.register-form {
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.register-form .input-msg {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-size: 12px;
+}
+
+.register-form .succ-msg {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.register-form .input-box {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.register-form .input-box label {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    margin-right: 4px;
+}
+
+.register-form .input-box button {
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-form .input-box .button-register {
+    margin-right: 10px;
+    background: #1d90fb;
+    color: #fff;
+    text-decoration: none;
+}

@@ -66,7 +66,7 @@ class Login extends React.Component {
             success: (res)=> {
                 if(res.meta.code===0){
                     this.setSuccMsg('登录成功');
-                    this.props.history.push('/home');
+                    this.props.history.push('/app');
                 }else if(res.meta.code===200000){
                     this.setMsg(res.meta.message,1)
                 }else if(res.meta.code===200001){

@@ -6,8 +6,8 @@ class Table extends React.Component {
             <table border="1">
                 <thead>
                 <tr>
-                    <td>姓名</td>
-                    <td>描述</td>
+                    <td>用户名</td>
+                    <td>密码</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -15,8 +15,8 @@ class Table extends React.Component {
                     this.props.value.map((item, index) => {
                         return (
                             <tr key={index}>
-                                <td>{item.name}</td>
-                                <td>{item.desc}</td>
+                                <td>{item.username}</td>
+                                <td>{item.password}</td>
                             </tr>
                         )
 

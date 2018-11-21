@@ -58,7 +58,7 @@ class Register extends React.Component{
             password: this.state.password
         };
         $.ajax({
-            url:'http://localhost:8082/register',
+            url:'http://localhost:8082/addData',
             type: 'post',
             dataType: 'json',
             data:params,
